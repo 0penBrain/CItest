@@ -1,6 +1,6 @@
-if: github.repository != '0penBrain/CItest'
 name: GitHub Actions Demo
 on: [push]
+if: github.repository != '0penBrain/CItest'
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
