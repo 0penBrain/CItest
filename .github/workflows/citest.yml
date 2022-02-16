@@ -1,8 +1,8 @@
 name: GitHub Actions Demo
 on: [push]
 jobs:
-if: ${{ github.repo != '0penBrain/CItest' }}
   Explore-GitHub-Actions:
+  if: ${{ github.repo != '0penBrain/CItest' }}
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
