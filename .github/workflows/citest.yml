@@ -2,7 +2,7 @@ name: GitHub Actions Demo
 on: [push]
 jobs:
   Explore-GitHub-Actions:
-    if: github.repository != '0penBrain/FreeCAD' && !endWith( github.ref, '/master' )
+    if: github.repository != '0penBrain/FreeCAD' && !endsWith( github.ref, '/master' )
     runs-on: ubuntu-latest
     container: openbrain/freecad
     steps:
