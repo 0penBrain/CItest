@@ -1,7 +1,7 @@
 name: GitHub Actions Demo
-if: ${{ github.repo != '0penBrain/CItest' }}
 on: [push]
 jobs:
+if: ${{ github.repo != '0penBrain/CItest' }}
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
