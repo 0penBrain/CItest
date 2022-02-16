@@ -1,6 +1,6 @@
 name: GitHub Actions Demo
-on: [push]
 if: ${{ github.repo != '0penBrain/CItest' }}
+on: [push]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
