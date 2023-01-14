@@ -9,6 +9,5 @@ jobs:
       - uses: ./.github/workflows/testaction
 
   SubFlowTest:
-    runs-on: ubuntu-latest
     uses: ./.github/workflows/subflow.yml
 #Dummy
