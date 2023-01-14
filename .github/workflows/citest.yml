@@ -1,10 +1,14 @@
 name: test
 on: [workflow_dispatch]
 jobs:
-  Explore-GitHub-Actions:
+  SubActionTest:
     #if: github.repository != '0penBrain/FreeCAD' && !endsWith( github.ref, '/master' )
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - uses: ./.github/workflows/testaction
 
+  SubFlowTest:
+    runs-on: ubuntu-latest
+    uses: ./.github/workflows/subflow/subflow.yml
 #Dummy
