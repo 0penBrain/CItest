@@ -3,13 +3,16 @@ description: 'Local action inside reusable workflow testing'
 
 runs:
   using: "composite"
-  defaults:
-    run:
-      shell: bash
   steps:
     - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      shell: bash
     - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      shell: bash
     - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      shell: bash
     - run: mkdir localactiondir
+      shell: bash
     - run: touch localactiondir/localactionfile
+      shell: bash
     - run: ls -Ra .
+      shell: bash
