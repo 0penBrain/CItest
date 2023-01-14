@@ -10,5 +10,5 @@ jobs:
 
   SubFlowTest:
     runs-on: ubuntu-latest
-    uses: ./.github/workflows/subflow/subflow.yml
+    uses: ./.github/workflows/subflow.yml
 #Dummy
