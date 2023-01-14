@@ -12,5 +12,5 @@ jobs:
       - run: ls -Ra .
 
   SubFlowTest:
-    uses: ./.github/workflows/subflow.yml
+    uses: subflow.yml
 #Dummy
