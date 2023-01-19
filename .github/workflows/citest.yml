@@ -7,7 +7,6 @@ jobs:
     steps:
       - run: mkdir globalflowdir
       - run: touch globalflowdir/globalflowfile
-      - uses: ./.github/workflows/testaction
       - run: ls -Ra .
       - name: test
         run: |
