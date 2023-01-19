@@ -15,7 +15,7 @@ jobs:
           echo "test<<EOD" >> $GITHUB_ENV
           echo -e "une chaine\ndeux chaines\ntrois chaines" >> $GITHUB_ENV
           echo "EOD" >> $GITHUB_ENV
-      - run: echo "cool"
+      - run: echo ${{ env.test }}
         if: always()
 
   SubFlowTest:
