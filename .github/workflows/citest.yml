@@ -11,7 +11,9 @@ jobs:
       - name: test
         run: |
           echo "test<<EOD" >> $GITHUB_ENV
-          echo -e "une chaine\ndeux chaines\ntrois chaines" >> $GITHUB_ENV
+          echo "une chaine" >> $GITHUB_ENV
+          echo "deux chaines" >> $GITHUB_ENV
+          echo "trois chaines" >> $GITHUB_ENV
           echo "EOD" >> $GITHUB_ENV
           echo "test2=coucou" >> $GITHUB_ENV
       - run: echo "${{ env.test }}"
