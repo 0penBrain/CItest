@@ -5,7 +5,6 @@ jobs:
     #if: github.repository != '0penBrain/FreeCAD' && !endsWith( github.ref, '/master' )
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
       - run: mkdir globalflowdir
       - run: touch globalflowdir/globalflowfile
       - uses: ./.github/workflows/testaction
@@ -15,7 +14,10 @@ jobs:
           echo "test<<EOD" >> $GITHUB_ENV
           echo -e "une chaine\ndeux chaines\ntrois chaines" >> $GITHUB_ENV
           echo "EOD" >> $GITHUB_ENV
-      - run: echo ${{ env.test }}
+          echo "test2=coucou" >> $GITHUB_ENV
+      - run: echo "${{ env.test }}"
+        if: always()
+      - run: echo $test2
         if: always()
 
   SubFlowTest:
