@@ -10,6 +10,14 @@ jobs:
       - run: touch globalflowdir/globalflowfile
       - uses: ./.github/workflows/testaction
       - run: ls -Ra .
+      - run: |
+        echo "test<<EOD" >> $GITHUB_ENV
+        echo "une chaine" >> $GITHUB_ENV
+        echo "deux chaines" >> $GITHUB_ENV
+        echo "trois chaines" >> $GITHUB_ENV
+        echo "EOD" >> $GITHUB_ENV
+      - run: echo "cool"
+        if: always()
 
   SubFlowTest:
     uses: ./.github/workflows/subflow.yml
