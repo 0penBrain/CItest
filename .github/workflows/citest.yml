@@ -1,26 +1,17 @@
 name: test
-on: [workflow_dispatch]
+on: [workflow_dispatch, push]
 jobs:
-  SubActionTest:
-    #if: github.repository != '0penBrain/FreeCAD' && !endsWith( github.ref, '/master' )
+  Succeed:
     runs-on: ubuntu-latest
     steps:
-      - run: mkdir globalflowdir
-      - run: touch globalflowdir/globalflowfile
-      - run: ls -Ra .
-      - name: test
-        run: |
-          echo "test<<EOD" >> $GITHUB_ENV
-          echo "'Prepare-3957767425.md'" >> $GITHUB_ENV
-          echo "'Build2004-3957767425.md'" >> $GITHUB_ENV
-          echo "'Build2204-3957767425.md'" >> $GITHUB_ENV
-          echo "EOD" >> $GITHUB_ENV
-          echo "test2=coucou" >> $GITHUB_ENV
-      - run: echo "${{ env.test }}"
-        if: always()
-      - run: echo $test2
-        if: always()
+      - run: echo "I succeed"
+    
+  Fail:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - run: echo "I fail" ; exit 1
 
-  SubFlowTest:
-    uses: ./.github/workflows/subflow.yml
+#  SubFlowTest:
+#    uses: ./.github/workflows/subflow.yml
 #Dummy
