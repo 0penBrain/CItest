@@ -13,6 +13,7 @@ jobs:
       - name: test
         continue-on-error: true
         run: |
+          set +e
           echo "I fail"
           cat thisfiledoesnotexist
           echo "Test"
