@@ -17,6 +17,13 @@ jobs:
           echo "I fail"
           cat thisfiledoesnotexist
           echo "Test"
+          
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test
+        run: |
+          [ 1 -gt 5 ]
 
 #  SubFlowTest:
 #    uses: ./.github/workflows/subflow.yml
