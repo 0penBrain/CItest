@@ -28,10 +28,12 @@ jobs:
           wget https://raw.githubusercontent.com/codespell-project/codespell/master/codespell_lib/data/dictionary.txt
           echo "adn" > testfile
           echo "====================="
-          codespell --quiet-level 3 --summary --count -D dictionary.txt testfile
+          codespell --quiet-level 3 --summary --count -D dictionary.txt testfile 2>err.log 1>out.log
           ec=$?
           echo "====================="
-          echo $ec
+          cat err.log
+          echo "====================="
+          cat out.log
           echo "====================="
           misspellings=$( codespell --quiet-level 3 --summary --count -D dictionary.txt testfile >& codespell.log )
           echo "$misspellings"
