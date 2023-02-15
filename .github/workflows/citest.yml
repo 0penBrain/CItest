@@ -23,6 +23,7 @@ jobs:
     steps:
       - name: test
         run: |
+          set +e
           pip install codespell
           wget https://raw.githubusercontent.com/codespell-project/codespell/master/codespell_lib/data/dictionary.txt
           echo "adn" > testfile
