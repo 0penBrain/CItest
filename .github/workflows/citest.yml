@@ -23,7 +23,12 @@ jobs:
     steps:
       - name: test
         run: |
-          [ 1 -gt 5 ]
+          set -x
+          pip install codespell
+          wget https://raw.githubusercontent.com/codespell-project/codespell/master/codespell_lib/data/dictionary.txt
+          echo "and" > testfile
+          codespell --quiet-level 3 --summary --count -D dictionary.txt testfile
+          misspellings=$( codespell --quiet-level 3 --summary --count -D dictionary.txt testfile >& codespell.log ) || true
 
 #  SubFlowTest:
 #    uses: ./.github/workflows/subflow.yml
