@@ -29,6 +29,9 @@ jobs:
           echo "adn" > testfile
           echo "====================="
           codespell --quiet-level 3 --summary --count -D dictionary.txt testfile
+          ec=$?
+          echo "====================="
+          echo $ec
           echo "====================="
           misspellings=$( codespell --quiet-level 3 --summary --count -D dictionary.txt testfile >& codespell.log )
           echo "$misspellings"
