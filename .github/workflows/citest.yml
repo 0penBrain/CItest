@@ -30,9 +30,7 @@ jobs:
           echo "====================="
           codespell --quiet-level 3 --summary --count -D dictionary.txt testfile
           echo "====================="
-          $( codespell --quiet-level 3 --summary --count -D dictionary.txt testfile >& codespell.log ) || true
-          echo "====================="
-          misspellings=$( codespell --quiet-level 3 --summary --count -D dictionary.txt testfile >& codespell.log ) || true
+          misspellings=$( codespell --quiet-level 3 --summary --count -D dictionary.txt testfile >& codespell.log )
           echo "$misspellings"
           echo "====================="
 
