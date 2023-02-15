@@ -24,7 +24,6 @@ jobs:
       - name: test
         run: |
           set +e
-          set -x
           pip install codespell
           wget https://raw.githubusercontent.com/codespell-project/codespell/master/codespell_lib/data/dictionary.txt
           echo "adn" > testfile
@@ -36,7 +35,7 @@ jobs:
           echo "====================="
           cat out.log
           echo "====================="
-          misspellings=$( codespell --quiet-level 3 --summary --count -D dictionary.txt testfile > codespell.log )
+          misspellings=$( { codespell --quiet-level 3 --summary --count -D dictionary.txt testfile > codespell.log ; } ) 2>&1
           echo "$misspellings"
           echo "====================="
           if [ $misspellings -gt 0 ]
