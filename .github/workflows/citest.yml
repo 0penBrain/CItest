@@ -38,6 +38,13 @@ jobs:
           misspellings=$( codespell --quiet-level 3 --summary --count -D dictionary.txt testfile > codespell.log )
           echo "$misspellings"
           echo "====================="
+          if [ $misspellings -gt 0 ]
+          then
+            echo "FAIL"
+          else
+            echo "SUCCESS"
+          fi
+          echo "====================="
 
 #  SubFlowTest:
 #    uses: ./.github/workflows/subflow.yml
