@@ -58,6 +58,9 @@ jobs:
       - name: debug
         if: always()
         run: echo "${{ steps.test.conclusion }}"
+      - name: debug2
+        if: steps.test.conclusion != 'skipped'
+        run: echo "coucou"
       
 
 #  SubFlowTest:
