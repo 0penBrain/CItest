@@ -46,6 +46,19 @@ jobs:
             echo "SUCCESS"
           fi
           echo "====================="
+          
+  OtherTest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: crash
+        run: mkdir -p
+      - name: test
+        id: test
+        run: echo "dummy"
+      - name: debug
+        if: always()
+        run: echo "${{ step.test.conclusion }}"
+      
 
 #  SubFlowTest:
 #    uses: ./.github/workflows/subflow.yml
