@@ -57,7 +57,7 @@ jobs:
         run: echo "dummy"
       - name: debug
         if: always()
-        run: echo "${{ step.test.conclusion }}"
+        run: echo "${{ steps.test.conclusion }}"
       
 
 #  SubFlowTest:
