@@ -7,7 +7,7 @@ jobs:
       - run: echo "I succeed"
     
   Fail:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest-8-cores
     #continue-on-error: true
     steps:
       - name: test
